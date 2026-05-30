@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 주요 뉴스 2026.05.30</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; background: #1a1a2e; color: #fff; overflow: hidden; }
+
+  .slide { display: none; width: 100vw; height: 100vh; padding: 60px 80px; flex-direction: column; justify-content: center; animation: fadeIn 0.5s ease; }
+  .slide.active { display: flex; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* 슬라이드 1 - 표지 */
+  .slide-cover { background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #0f3460 100%); align-items: center; text-align: center; }
+  .slide-cover .date-badge { background: #e94560; color: #fff; padding: 8px 24px; border-radius: 20px; font-size: 16px; margin-bottom: 30px; display: inline-block; }
+  .slide-cover h1 { font-size: 56px; font-weight: 900; line-height: 1.2; margin-bottom: 20px; }
+  .slide-cover h1 span { color: #e94560; }
+  .slide-cover p { font-size: 20px; color: #a8b2d8; }
+
+  /* 뉴스 슬라이드 공통 */
+  .slide-news { background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); }
+  .news-label { font-size: 14px; letter-spacing: 3px; color: #e94560; text-transform: uppercase; margin-bottom: 12px; }
+  .news-num { font-size: 80px; font-weight: 900; color: rgba(233,69,96,0.15); position: absolute; top: 40px; right: 80px; line-height: 1; }
+  .slide-news { position: relative; }
+  .news-title { font-size: 38px; font-weight: 700; line-height: 1.4; margin-bottom: 24px; color: #fff; }
+  .news-desc { font-size: 20px; color: #a8b2d8; line-height: 1.7; border-left: 4px solid #e94560; padding-left: 20px; }
+  .news-tag { display: inline-block; background: rgba(233,69,96,0.2); color: #e94560; border: 1px solid #e94560; padding: 4px 14px; border-radius: 12px; font-size: 13px; margin-bottom: 20px; }
+
+  /* 마지막 슬라이드 */
+  .slide-end { background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); align-items: center; text-align: center; }
+  .slide-end h2 { font-size: 42px; font-weight: 700; margin-bottom: 16px; }
+  .slide-end p { font-size: 18px; color: #a8b2d8; }
+  .slide-end .source { margin-top: 30px; font-size: 13px; color: #555; }
+
+  /* 네비게이션 */
+  .nav { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 20px; z-index: 100; }
+  .nav button { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 12px 28px; border-radius: 30px; cursor: pointer; font-size: 16px; font-family: inherit; transition: all 0.2s; }
+  .nav button:hover { background: #e94560; border-color: #e94560; }
+  .nav .counter { color: #a8b2d8; font-size: 15px; min-width: 60px; text-align: center; }
+
+  /* 진행바 */
+  .progress { position: fixed; top: 0; left: 0; height: 4px; background: #e94560; transition: width 0.3s; z-index: 100; }
+
+  /* 구분선 */
+  .divider { width: 60px; height: 4px; background: #e94560; margin-bottom: 24px; border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- 슬라이드 1: 표지 -->
+<div class="slide slide-cover active">
+  <div class="date-badge">2026년 5월 30일 금요일</div>
+  <h1>오늘의<br><span>주요 뉴스</span></h1>
+  <p>국내 · 국제 핵심 이슈 7선</p>
+</div>
+
+<!-- 슬라이드 2: 국내 1 -->
+<div class="slide slide-news">
+  <div class="news-num">01</div>
+  <div class="news-label">국내 뉴스</div>
+  <div class="news-tag">정치·선거</div>
+  <div class="divider"></div>
+  <div class="news-title">지방선거 사전투표<br>전국 일제히 시작</div>
+  <div class="news-desc">
+    6월 3일 실시되는 지방선거·보궐선거를 앞두고<br>
+    5월 29~30일 전국 사전투표소 운영 중.<br>
+    유권자들의 적극적인 참여 독려.
+  </div>
+</div>
+
+<!-- 슬라이드 3: 국내 2 -->
+<div class="slide slide-news">
+  <div class="news-num">02</div>
+  <div class="news-label">국내 뉴스</div>
+  <div class="news-tag">사회·사고</div>
+  <div class="divider"></div>
+  <div class="news-title">서소문 고가차도 붕괴<br>진상 규명 본격화</div>
+  <div class="news-desc">
+    서소문 고가차도 붕괴 사고의 정확한 원인 규명을 위한<br>
+    공식 조사가 본격 착수.<br>
+    관계 기관 합동 현장 조사 진행 중.
+  </div>
+</div>
+
+<!-- 슬라이드 4: 국내 3 -->
+<div class="slide slide-news">
+  <div class="news-num">03</div>
+  <div class="news-label">국내 뉴스</div>
+  <div class="news-tag">산업·기술</div>
+  <div class="divider"></div>
+  <div class="news-title">삼성전자·SK하이닉스<br>AI 반도체 경쟁 심화</div>
+  <div class="news-desc">
+    글로벌 AI 수요 급등 속 국내 반도체 양대 산맥의<br>
+    차세대 AI 반도체 시장 선점 경쟁이 치열하게 전개.<br>
+    HBM·차세대 메모리 기술 개발 가속.
+  </div>
+</div>
+
+<!-- 슬라이드 5: 국내 4 -->
+<div class="slide slide-news">
+  <div class="news-num">04</div>
+  <div class="news-label">국내 뉴스</div>
+  <div class="news-tag">외교·안보</div>
+  <div class="divider"></div>
+  <div class="news-title">호르무즈 해상<br>선박 화재 발생</div>
+  <div class="news-desc">
+    호르무즈 해협 인근 해상에서 선박 화재 발생.<br>
+    청와대 강유정 수석대변인, 관련 점검회의 결과<br>
+    서면 브리핑을 통해 공식 입장 발표.
+  </div>
+</div>
+
+<!-- 슬라이드 6: 국제 1 -->
+<div class="slide slide-news">
+  <div class="news-num">05</div>
+  <div class="news-label">국제 뉴스</div>
+  <div class="news-tag">외교·자원</div>
+  <div class="divider"></div>
+  <div class="news-title">인도–미국<br>핵심 광물 협력 협정 체결</div>
+  <div class="news-desc">
+    인도 외교장관 자이샨카르 & 미 국무장관 루비오,<br>
+    뉴델리에서 희토류·핵심 광물 공급망 협력 협정 공식 서명.<br>
+    채굴·가공·재활용 전 분야 파트너십 구축.
+  </div>
+</div>
+
+<!-- 슬라이드 7: 국제 2 -->
+<div class="slide slide-news">
+  <div class="news-num">06</div>
+  <div class="news-label">국제 뉴스</div>
+  <div class="news-tag">경제·증시</div>
+  <div class="divider"></div>
+  <div class="news-title">대만 증권거래소<br>세계 5위 주식시장 등극</div>
+  <div class="news-desc">
+    시가총액 4.95조 달러로 인도(4.92조 달러)를 추월.<br>
+    TSMC 주도의 AI 반도체 붐이 핵심 동력.<br>
+    미·중 무역 갈등 속 반사이익 효과도 주목.
+  </div>
+</div>
+
+<!-- 슬라이드 8: 국제 3 -->
+<div class="slide slide-news">
+  <div class="news-num">07</div>
+  <div class="news-label">국제 뉴스</div>
+  <div class="news-tag">문화·스포츠</div>
+  <div class="divider"></div>
+  <div class="news-title">14세 인도계 미국인<br>전미 철자법 대회 우승</div>
+  <div class="news-desc">
+    캘리포니아 출신 Shrey Parikh(14세),<br>
+    2026 Scripps 전국 철자법 대회에서 우승.<br>
+    90초 승부에서 32단어를 정확히 구사, 상금 5만 2500달러 획득.
+  </div>
+</div>
+
+<!-- 슬라이드 9: 마무리 -->
+<div class="slide slide-end">
+  <h2>오늘 하루도<br>좋은 하루 되세요</h2>
+  <p>2026년 5월 30일 주요 뉴스 브리핑 완료</p>
+  <div class="source">출처: 오늘의클릭, 대한민국 청와대, FreeJobAlert, Wikipedia</div>
+</div>
+
+<!-- 네비게이션 -->
+<div class="nav">
+  <button onclick="prevSlide()">◀ 이전</button>
+  <span class="counter" id="counter">1 / 9</span>
+  <button onclick="nextSlide()">다음 ▶</button>
+</div>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+
+  function showSlide(n) {
+    slides[current].classList.remove('active');
+    current = (n + total) % total;
+    slides[current].classList.add('active');
+    document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
+    document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  }
+
+  function nextSlide() { showSlide(current + 1); }
+  function prevSlide() { showSlide(current - 1); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextSlide();
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') prevSlide();
+  });
+
+  showSlide(0);
+</script>
+</body>
+</html>
